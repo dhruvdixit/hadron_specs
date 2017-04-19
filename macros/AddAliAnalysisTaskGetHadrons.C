@@ -1,15 +1,15 @@
 // #include "AliAnalysisTaskGetHadrons.h"
 
-AliAnalysisTaskGetHadrons *AddAliAnalysisTaskCalibEmcal(TString name = "AliAnalysisTaskGetHadrons")
+AliAnalysisTaskGetHadrons *AddAliAnalysisTaskGetHadrons(TString name = "AliAnalysisTaskGetHadrons")
 {
   AliAnalysisManager *mgr = AliAnalysisManager::GetAnalysisManager();
 
   //creae a subfolder in the file
   TString filename = mgr->GetCommonFileName(); 
-  filename += ":AliAnalysisTaskCalibEmcal";
+  filename += ":AliAnalysisTaskGetHadrons";
 
   //Create an instance of your task
-  AliAnalysisTaskCalibEmcal *task = new AliAnalysisTaskCalibEmcal(name.Data());
+  AliAnalysisTaskGetHadrons *task = new AliAnalysisTaskGetHadrons(name.Data());
 
   mgr->AddTask(task);//add task to manager
   mgr->ConnectInput(task, 0, mgr->GetCommonInputContainer()); //add manager to your task
